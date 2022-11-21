@@ -88,9 +88,9 @@ var specialCharacters = [
     'Z'
   ];
   
-  
-  var inputOptions = [];
-  var inputlength = 0;
+  //var inputlength 
+  var inputOptions = []
+  var inputlength = 0
 
   
   // Function to prompt user for password options
@@ -98,41 +98,43 @@ var specialCharacters = [
     
     inputlength = prompt(`Please pick the number of chracters (10-64).`)
     if(inputlength < 10 || inputlength >= 65 || isNaN(inputlength)) {
-        alert(`Please pick a number between 10 - 64.`);
-        return false;
+        alert(`Please pick a number between 10 - 64.`)
+        return false
 
     }
     if(confirm(`Would you like lowercase?`)) {
-           inputOptions += lowerCasedCharacters;
+           inputOptions.push += lowerCasedCharacters
     }
     if(confirm(`Would you like uppercase?`)) {
-           inputOptions += upperCasedCharacters;
+           inputOptions.push += upperCasedCharacters
     }
     if(confirm(`Would you like numbers?`)) {
-           inputOptions += numericCharacters;
+           inputOptions.push += numericCharacters
   }
     if(confirm(`Would you like special characters?`)) {
-           inputOptions += specialCharacters;
+           inputOptions.push += specialCharacters
 }
   return true;
 }
-
+//console.log(inputOptions)
   
   // Function for getting a random element from an array
   function getRandom() {
-    var password = " ";
+    var password = " "
     
     for(var i = 0; i < inputlength; i++) {
-        var randomChar = Math.floor(Math.random() * inputOptions.length);
-        password += inputOptions[randomChar];
+        var randomChar = Math.floor(Math.random() * inputOptions.length)
+        password = password + inputOptions[randomChar] 
     }
-    return password;
+    return password
 }
-
+  
   // Function to generate password with user input
   function generatePassword() {
-    return getRandom();
-    
+    getPasswordOptions()
+    if(getPasswordOptions === true) {
+        writePassword()
+    }
   }
   
   // Get references to the #generate element
@@ -140,7 +142,6 @@ var specialCharacters = [
   
   // Write password to the #password input
   function writePassword() {
-    getPasswordOptions()
     var password = generatePassword();
     var passwordText = document.querySelector('#password');
   
