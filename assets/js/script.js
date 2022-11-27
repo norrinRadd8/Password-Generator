@@ -103,18 +103,25 @@ var specialCharacters = [
 
     }
     if(confirm(`Would you like lowercase?`)) {
-           inputOptions += lowerCasedCharacters;
+           inputOptions = (lowerCasedCharacters.slice() + inputOptions.slice());
     }
     if(confirm(`Would you like uppercase?`)) {
-           inputOptions += upperCasedCharacters;
+          inputOptions = (upperCasedCharacters.slice() + inputOptions.slice());
+      //  inputOptions += upperCasedCharacters;
     }
     if(confirm(`Would you like numbers?`)) {
-           inputOptions += numericCharacters;
+          inputOptions = (numericCharacters.slice() + inputOptions.slice());
+      //  inputOptions += numericCharacters;
   }
     if(confirm(`Would you like special characters?`)) {
-           inputOptions += specialCharacters;
+          inputOptions = (specialCharacters.slice() + inputOptions.slice());
+      //  inputOptions += specialCharacters;
+
+      return true;
 }
-  return true;
+
+
+  
 }
 
   
